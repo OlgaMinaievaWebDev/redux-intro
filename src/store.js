@@ -1,3 +1,5 @@
+import { legacy_createStore as createStore } from "redux";
+
 const initialState = {
   balance: 0,
   loan: 0,
@@ -24,3 +26,8 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
+
+const store = createStore(reducer);
+
+store.dispatch({ type: "account/deposit", payload: 500 });
+console.log(store.getState());
