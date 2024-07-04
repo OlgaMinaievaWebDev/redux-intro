@@ -7,7 +7,7 @@ function formatCurrency(value) {
   }).format(value);
 }
 
-function BalanceDisplay(balance) {
+function BalanceDisplay({ balance }) {
   return <div className="balance">{formatCurrency(balance)}</div>;
 }
 
@@ -16,4 +16,5 @@ function mapStateToProps(state) {
     balance: state.account.balance,
   };
 }
+
 export default connect(mapStateToProps)(BalanceDisplay);
